@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>form</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
+<style type="text/css">
+	/**********  reset样式重置  ************/
+html{color:#000;background:#FFF;}body,diFv,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}strong{font-weight:bold;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}
+body{font-size:14px; color:#888; font-family:"\5b8b\4f53";}
+a:link{color:#888; text-decoration:none;}
+a:visited{color:#888; text-decoration:none;}
+a:hover{color:#888; text-decoration:underline;}
+a:active{color:#888; text-decoration:none;}
+p{line-height:1.6;}
+
+
+/* 清理浮动 */
+.fn-clear:after {
+    visibility:hidden;
+    display:block;
+    font-size:0;
+    content:" ";
+    clear:both;
+    height:0;
+}
+.fn-clear {
+    zoom:1; /* for IE6 IE7 */
+}
+	.prize_con{ width:450px;}
+    .prize_con .space{color:#666; font-size:18px; padding:13px 0; text-align:center;}
+	.prize_con .prompt{color:#666; font-size:18px; padding-bottom:14px;}
+	.prize_con .dashedbox{border:2px dashed #ddd; width:446px; height:116px; line-height:116px; background:#fafafa; display:inline-block;} 
+	.prize_con .dashedbox span.text{ padding-left:47px; height:33px; line-height:33px; color:#666; font-size:24px; font-family:"微软雅黑"; background:url(images/dashed_plus_ico.png) no-repeat left center; width:200px; display:block; margin:42px auto 0; cursor:pointer;}
+	
+	.key_add_con{padding-top:20px;}
+	.key_add_con .dashedbox_small{ width:164px; height:36px; float:left; border:1px dashed #e9e9e9;}
+	.key_add_con .dashedbox_small span.text{ padding-left:33px; width:111px; height:18px; line-height:18px; color::#999; font-size:16px; background:url(images/dashed_plus_small.png) no-repeat left center; margin:8px auto 0; display:block; cursor:pointer;}
+	.key_add_con span.tip{ color:#666; font-size:14px; height:38px; line-height:38px; float:left; padding-left:15px;}
+	.key_add_con span.tip em{color:#ffa200;}
+	
+	.def_warn_con{padding:38px 29px 32px; width:620px;}
+	.def_warn_con p.text{color:#333; font-size:14px; padding:55px 0 17px;}
+	.def_warn_con .tip{padding:18px; color:#ffa200; background:#f4f4f4; font-size:14px; margin:41px 0 26px;}
+	.Line .ipt, .Line em, .Line i {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.Line em {
+		font-size: 14px;
+		height: 30px;
+		line-height: 30px;
+		padding-right: 15px;
+		text-align: right;
+		width: 60px;
+		color:#333;
+	}
+	.Ritem {
+		background: none repeat scroll 0 0 #FAFAFA;
+		border-color: #AAAAAA #DDDDDD #DDDDDD;
+		border-style: solid;
+		border-width: 1px;
+		height: 28px;
+		line-height: 28px;
+		padding-left: 3px;
+		width: 237px;
+	}
+	.def_warn_op a{height:30px; line-height:30px; font-size:14px; float:right; text-align:center;}
+	.def_warn_op .def_white{ width:101px; color:#333; background:url(images/def_warn_white.png) no-repeat 0 0;}
+	.def_warn_op .def_green{ width:96px; color:#fff; background:url(images/def_warn_green.png) no-repeat 0 0; margin-left:11px;}
+	.def_warn_op a:hover{ text-decoration:none;}
+</style>
+</head>
+<body>
+	<div class="prize_con">
+    	<p class="prompt">您可以输入微博链接进行微博抽奖，或者针对粉丝抽奖，马上抽奖：</p>
+        <a href="javascript:;" class="dashedbox">
+            <span class="text">单条微博抽奖</span>
+        </a>
+        <p class="space">或</p>
+        <a href="javascript:;" class="dashedbox">
+            <span class="text">粉丝抽奖</span>
+        </a>
+    </div>
+    
+    <div class="prize_con">
+    	<p class="prompt">请先添加一个竞争对手，您可以：</p>
+        <a href="javascript:;" class="dashedbox">
+            <span class="text">从行业库添加</span>
+        </a>
+        <p class="space">或</p>
+        <a href="javascript:;" class="dashedbox">
+            <span class="text">手动输入添加</span>
+        </a>
+    </div>
+    
+    <div class="prize_con">
+    	<p class="prompt">请先添加一条快捷回复内。</p>
+        <a href="javascript:;" class="dashedbox">
+            <span class="text">立即添加</span>
+        </a>
+    </div>
+    
+    <div class="prize_con">
+    	<p class="prompt">请先添加一条要监测的微博，您可以：</p>
+        <a href="javascript:;" class="dashedbox">
+            <span class="text">立即发布一条</span>
+        </a>
+        <p class="space">或</p>
+        <a href="javascript:;" class="dashedbox">
+            <span class="text">添加微博地址</span>
+        </a>
+    </div>
+    
+    <div class="key_add_con fn-clear">
+    	<a href="javascript:;" class="dashedbox_small">
+        	<span class="text">添加关键词</span>
+        </a>
+        <span class="tip">请先添加关键词(<em>请谨慎填写，填写后如需修改，请联系客服。</em>)</span>
+    </div>
+    
+    <div class="def_warn_con">
+    	<img src="images/default_bar_02.png" alt="" />
+        <p class="text">设置您所要监测的关键词，系统将定时获取包含该关键词的所有微博。</p>
+        <div class="Line fn-clear">
+        	<em>关键词：</em>
+            <i class="ipt"><input value="" class="Ritem" id="Rnick"></i>
+        </div>
+        <div class="tip"><strong>提示：</strong>请谨慎填写。填写后如要修改，请联系客服。</div>
+        <p class="def_warn_op">
+        	<a href="javascript:;" class="def_green">保存，完成</a>
+            <a href="javascript:;" class="def_white">跳过，完成</a>
+        </p>
+    </div>
+</body>
+</html>

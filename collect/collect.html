@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../jquery  v1.3.2.js"></script>
+<script type="text/javascript" src="../zoro 9.10.js"></script>
+<style>
+/* CSS Document */
+html{overflow:hidden}
+body{margin:0;font:12px/1.7 "\5B8B\4F53",Tahoma,Geneva}
+ul,dl,dt,dd,ol,input,h1,h2,h3,h4,h5,h6,p,form{padding:0;margin:0}img{border:none}
+ul,li{list-style:none}i{font-style:normal}button,input{vertical-align:middle}.clear{clear:both;height:0;overflow:hidden}table{border-collapse:collapse;border-spacing:0}a{text-decoration:none}a,button{outline:none;hide-focus:expression(this.hideFocus=true)}
+.SelectNone{-webkit-user-select:none;-moz-user-select:none}
+button{background:none;border:none;cursor:pointer;padding:0;outline:none}
+.fn-clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+.fn-clear{zoom:1;/*for IE6 IE7*/}
+
+.collect{width:510px; border:1px solid #ccc; height:347px; position:relative}
+.tag{background:url(collect.png) repeat-x 0 -79px; height:33px; line-height:33px; font-size:12px; color:#fff; padding-left:12px}
+.tag .close{position:absolute; top:8px; right:8px; width:15px; height:15px; background:url(collect.png) no-repeat -136px -30px}
+.mBody{padding:15px; float:left; font-size:14px;}
+.iL,.iC,.iR{float:left}
+/*Left*/
+.iL input{border:1px solid #CCC; line-height:28px; height:28px; width:223px; padding-left:5px; margin-bottom:10px}
+.options{border:1px solid #CCC; height:326px; overflow:auto; width:228px; padding:3px 0}
+.iL dt{line-height:22px; height:22px; padding-left:10px; cursor:pointer}
+.iL dt *{display:inline-block; vertical-align:middle}
+.iL dt em{background:url(collect.png) no-repeat -136px -45px; width:5px; height:5px; margin-right:6px}
+.iL dt.ext em{background-position:-144px -45px}
+.iL dd{display:none}
+.iL dd li{border-bottom:1px solid #fff}
+.iL dd li a{color:#666; display:block; padding-left:25px; cursor:default; line-height:22px}
+.iL dd li a:hover{color:#000}
+.iL dd li a.on{background-color:#cae5a2; color:#000}
+.iL dd li a i{color:#000; font-weight:bold}
+/*Center*/
+.iC{padding:80px 41px 0}
+.iC button{width:70px; height:27px; background:none;display:block}
+.iC button div{background:url(collect.png) no-repeat; width:68px; height:25px}
+.iC button.add{margin-bottom:34px}
+.iC button.add div{background-position:-68px -30px}
+.iC button.del div{background-position:0 -30px}
+/*Right*/
+.iR h5{line-height:30px; height:30px; width:195px; margin-bottom:10px; font-weight:100; font-size:14px}
+.iR .seled{border:1px solid #CCC; height:326px; overflow:auto; width:228px; padding:3px 0}
+.seled li{border-bottom:1px solid #fff}
+.seled li a{color:#666; display:block; padding-left:10px; cursor:default; line-height:22px}
+.seled li a:hover{color:#000}
+.seled li a.on{background-color:#cae5a2; color:#000}
+
+.btns-1{height:32px;text-align:right;padding:9px; background-color:#fcfcfc}
+/*按钮*/
+.uiBtn{font-size:14px;height:32px;overflow:visible;padding-right:1px}
+.uiBtn *{display:inline-block;line-height:30px;background:url(buttons.png) no-repeat;white-space:nowrap}
+.uiBtn i{padding-left:25px}
+.uiBtn b{background-position:right 0;padding-right:25px;font-weight:100;color:#000}
+/*按钮样式-1*/
+.uiBt1 i{padding-left:25px;background-position:0 -30px}
+.uiBt1 b{background-position:right -30px;padding-right:25px;color:#eee}
+
+
+</style>
+</head>
+
+<body>
+	<input type="hidden" id="mid" value="21321312" />
+	<input type="hidden" id="ROOT_URL" value="http://localhost/cncn/" />
+    <div class="mBody fn-clear">
+	<div class="iL">
+		<input onpropertychange="collect.change(this)" oninput="collect.change(this)" />
+		<div class="options e0-collect-add" id="options" ondblclick="collect.insert(event,this)">
+		<dl>
+	<dt class="ext e1-collect-ext"><em></em><i>城市</i></dt>
+	<dd><ul>
+							<li><a href="javascript:;" rel="335">安丘市</a></li>
+                            <li><a href="javascript:;" rel="325">滨州市</a></li>
+    						<li><a href="javascript:;" rel="340">博山区</a></li>
+                            <li><a href="javascript:;" rel="292">长岛县</a></li>
+						</ul></dd>
+</dl>
+<dl>
+	<dt class="e1-collect-ext"><em></em><i>景区</i></dt>
+	<dd><ul>
+							<li><a href="javascript:;" rel="32">安丘青云山民俗游乐园</a></li>
+				<li><a href="javascript:;" rel="115">安山景区</a></li>
+				<li><a href="javascript:;" rel="181">安丘青云湖休闲度假乐园</a></li>
+				<li><a href="javascript:;" rel="203">艾山温泉旅游度假村</a></li>
+						</ul></dd>
+</dl>
+<dl>
+	<dt class="e1-collect-ext"><em></em><i>酒店</i></dt>
+	<dd><ul>
+							<li><a href="javascript:;" rel="466">安丘新东方大酒店</a></li>
+
+						</ul></dd>
+</dl>		</div>
+	</div>
+	<div class="iC">
+		<button class="add" onclick="collect.addR()"><div></div></button>
+		<button class="del" onclick="collect.delR()"><div></div></button>
+        目前已经添加<span id="wei_num_1">0</span>个账号，<br />
+        还可以添加<span id="wei_num_2">5</span>个账号。
+	</div>
+	<div class="iR">
+		<h5>已选择的账号:</h5>
+		<div class="seled"><ul class="e0-collect-cancel" id="rSel" ondblclick="collect.remove(event,this)"></ul></div>
+	</div>
+</div>
+</body>
+<script>
+var collect=function(){
+	this.words={};
+	this.sbox=$('#rSel');
+	this.mid=G('mid').value;
+	this.regionBox=G('options');
+	this.allRegion=this.regionBox.innerHTML;
+	this.timer=null;
+	this.outputCalc();
+};collect.prototype={
+	change:function(o){
+		alert(123)
+		var t=this;
+		var word=o.value.trim();
+		if(word==''){t.regionBox.innerHTML=t.allRegion;return}
+		
+		var code=encodeURIComponent(word);
+		if(t.words[code]!=undefined){
+			t.regionBox.innerHTML=t.words[code];
+			return;
+		}else{
+			clearTimeout(t.timer);
+			t.timer=setTimeout(function(){
+				$post({url:'collect/suggest',data:{word:word},callback:function(x){
+					t.words[code]=x;
+					t.regionBox.innerHTML=x;
+				}});
+			},300);
+		}
+	},
+	
+	//左侧点击选中
+	add:function(a,b){
+		var a=this._self;
+		var b=this._target;
+		if(b.parentNode.tagName.toLowerCase()=='a')b=b.parentNode;
+			if(b.tagName.toLowerCase()=='a'){
+				if($(b).hasClass('on')){$(b)['removeClass']('on')}
+				else{
+					if(this.calculate()){$(b)['addClass']('on')}
+				}
+			}
+		},
+	//双击添加
+	insert:function(e,a){
+		e=e||window.event;
+		var b=e.target||e.srcElement;
+		var c = this.calculate();
+		if(b.parentNode.tagName.toLowerCase()=='a')b=b.parentNode;
+		if(b.tagName.toLowerCase()=='a'){
+			b.className='';
+			if(this.checkHas(b.rel) && c){
+				this.sbox.append(b.parentNode.cloneNode(true));
+			}
+		};
+		this.outputCalc();
+	},
+	//双击移除
+	remove:function(e,a){
+		e=e||window.event;
+		var b=e.target||e.srcElement;
+		if(b.parentNode.tagName.toLowerCase()=='a')b=b.parentNode;
+		if(b.tagName.toLowerCase()=='a'){$(b.parentNode).remove()};
+		this.outputCalc();
+	},
+	//右侧点击选中
+	cancel:function(a,b){
+		var a=this._self;
+		var b=this._target;
+		if(b.parentNode.tagName.toLowerCase()=='a')b=b.parentNode;
+		if(b.tagName.toLowerCase()=='a'){
+			//[b][($(b).hasClass('on')?'remove':'add')+'Class']('on');
+			$(b)[($(b).hasClass('on')?'remove':'add')+'Class']('on');
+		}
+	},
+	//添加>
+	addR:function(){
+		var t=this;
+		$('#options li a.on').each(function(){
+			this.className='';
+			if(t.checkHas(this.rel)){
+				var el=this.parentNode.cloneNode(true);
+				t.sbox.append(el);
+			}
+		});
+		t.outputCalc();
+	},
+	//<删除
+	delR:function(){$('#rSel li a.on').each(function(){$(this.parentNode).remove()});this.outputCalc()},
+	//检查右侧是否已存在
+	checkHas:function(rel){
+		var items=$('#rSel a');
+		for(var i=0,l=items.length;i<l;i++){
+			var el=items[i];
+			if(el.rel==rel)return false;
+		}
+		return true;
+	},
+	//展开
+	ext:function(a,o){
+		var a=this._self;
+		var o=this._target;
+		var has=$(a).hasClass('ext');
+		$(a).next()[has?'hide':'show']();
+		$(a)[(has?'remove':'add')+'Class']('ext');
+	},
+	//提交
+	submit:function(){
+		var ids=[];
+		var mid=this.mid;
+		$('#rSel>a').each(function(){ids.push(this.rel)});
+		if(ids.length==0){alert('请至少选择一项');return;}
+		$post({url:'collect/submit',data:{ids:ids.join(','),mid:mid},callback:function(x){
+			if(x.trim()=='Done'){}
+			window.open('cncncollect://type=done');
+		}});
+	},
+	close:function(){
+		window.open('cncncollect://type=close');
+	},
+	calculate:function(){
+		var ready_num = $('#options li a.on').length;
+		var aleady_num = $('#rSel li').length;
+		if((ready_num+aleady_num)<5){return true}
+		else{return false;}
+	},
+	outputCalc:function(){
+		var aleady_num = $('#rSel li').length;
+		$('#wei_num_1').html(aleady_num);
+		$('#wei_num_2').html(5-aleady_num);
+	}
+};collect=new collect;
+
+/*--------------事件处理机制----------------*/
+var $Evt=function(){
+	var t=this;
+	t.tipBox=[];
+	t.rule={mouseover:/o[\d]-([^\s]*)/g,click:/e[\d]-([^\s]*)/g,mousedown:/d[\d]-([^\s]*)/g,mouseout:/u[\d]-([^\s]*)/g};
+	document.onclick = function(e){e=e||window.event;t.finder(e.target||e.srcElement,e,t.rule.click)};
+	document.onmousedown = function(e){e=e||window.event;t.finder(e.target||e.srcElement,e,t.rule.mousedown)};
+//	document.onmouseover = function(e){e=e||window.event;t.finder(e.target||e.srcElement,e,t.rule.mouseover)};
+//	document.onmouseout = function(e){e=e||window.event;t.finder(e.target||e.srcElement,e,t.rule.mouseout)};
+	t.EvtBubble={
+		//(class="ea-class-func")[禁止冒泡]
+		1:function(){return true},
+		//(class="eb-class-func")[阻止返回默认值]
+		2:function(e){$.isIE?e.returnValue=false:e.preventDefault();return false},
+		//(class="ec-class-func")[禁止冒泡并阻止返回默认值]
+		3:function(e){$.isIE?e.returnValue=false:e.preventDefault();return true;}
+	};
+};
+$Evt.prototype={
+	finder:function(target,event,rule){
+		var FuncList=[];
+		var c,el=target,isStop=false;
+		while(el.tagName.toLowerCase()!='html'){
+			if(c=el.className.match(rule)){
+				for(var i=0,l=c.length;i<1;i++){
+					var a=c[i].replace(/[eod]([\d])-/,'').split('-');
+					var sign=RegExp.$1;
+					var cls=a[0],fn=a[1];
+					var cname=window[cls];
+					if(cname==undefined)return;
+					var func=cname[fn];
+					if(typeof func==='function'){
+						FuncList.push(function(_el){
+							return function(){
+								cname._event=event;//当前事件event
+								cname._target=target;//触发事件的标签
+								cname._self=_el;//设置事件的标签
+								func.apply(cname,a.slice(2));
+							}
+						}(el));
+					}else alert('undefined:'+cls+'.'+fn);
+					if(this.EvtBubble[sign]!=undefined)isStop=this.EvtBubble[sign](event);
+				}
+				if(isStop)break;else el=el.parentNode;
+			}else el=el.parentNode;
+		}
+		if(!isStop && event.type=='click')this.clear();
+		FuncList.each(function(){this()});
+	},
+	clear:function(){for(var i=0,l=this.tipBox.length;i<l;i++)this.tipBox[i].style.display='none';this.tipBox=[]},
+	push:function(el){el=G(el);if(!el)return;if(!this.tipBox.has(el))this.tipBox.push(el)}
+};$Evt=new $Evt;
+
+/*--------------End----------------*/
+</script>
+</html>
